@@ -1,0 +1,239 @@
+:root {
+    --color-primary: #0f5132;
+    --color-primary-dark: #0a3a23;
+    --color-accent: #d4a017;
+    --color-bg: #f8f9fa;
+    --color-surface: #fff;
+    --color-text: #212529;
+    --color-muted: #6c757d;
+    --color-border: #dee2e6;
+    --font-base: -apple-system, blinkmacsystemfont, "Segoe UI", roboto, oxygen, ubuntu, sans-serif;
+    --font-heading: georgia, "Times New Roman", serif;
+    --max-width: 1100px;
+    --radius: 6px;
+    --shadow: 0 2px 6px rgb(0 0 0 / 8%);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: var(--font-heading);
+    color: var(--color-primary-dark);
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 2.25rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    border-bottom: 2px solid var(--color-accent);
+    padding-bottom: 0.35rem;
+    margin-top: 2rem;
+}
+
+h3 {
+    font-size: 1.25rem;
+}
+
+p {
+    margin: 0.75rem 0;
+}
+
+a {
+    color: var(--color-primary);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+header {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+    padding: 1rem 1.5rem;
+}
+
+header h1 {
+    color: var(--color-surface);
+    margin: 0;
+}
+
+.nav-bar {
+    background-color: var(--color-primary-dark);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-bar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.nav-bar a {
+    color: var(--color-surface);
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: var(--radius);
+}
+
+.nav-bar a:hover,
+.nav-bar a.active {
+    background-color: var(--color-accent);
+    color: var(--color-primary-dark);
+    text-decoration: none;
+}
+
+main {
+    max-width: var(--max-width);
+    margin: 2rem auto;
+    padding: 0 1.5rem;
+}
+
+section,
+article {
+    background-color: var(--color-surface);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+    color: var(--color-surface);
+    text-align: center;
+    padding: 3rem 1.5rem;
+    border-radius: var(--radius);
+    margin-bottom: 2rem;
+}
+
+.hero h1,
+.hero h2 {
+    color: var(--color-surface);
+    border-bottom: none;
+}
+
+.hero p {
+    font-size: 1.15rem;
+    max-width: 700px;
+    margin: 1rem auto;
+}
+
+figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+
+figcaption {
+    color: var(--color-muted);
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.img-placeholder {
+    width: 100%;
+    max-width: 320px;
+    height: 200px;
+    background-color: var(--color-border);
+    border: 2px dashed var(--color-muted);
+    border-radius: var(--radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-muted);
+    font-weight: 600;
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+ul,
+ol {
+    padding-left: 1.5rem;
+}
+
+li {
+    margin: 0.35rem 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1rem 0;
+}
+
+th,
+td {
+    border: 1px solid var(--color-border);
+    padding: 0.6rem 0.8rem;
+    text-align: left;
+}
+
+th {
+    background-color: var(--color-primary);
+    color: var(--color-surface);
+}
+
+footer {
+    background-color: var(--color-primary-dark);
+    color: var(--color-surface);
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    margin-top: 2rem;
+}
+
+footer a {
+    color: var(--color-accent);
+}
+
+.destination-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.destination-card {
+    background-color: var(--color-bg);
+    padding: 1rem;
+    border-radius: var(--radius);
+    border: 1px solid var(--color-border);
+}
+
+.destination-card h3 {
+    margin-top: 0;
+}
+
+@media (width <= 600px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    .nav-bar ul {
+        gap: 0.75rem;
+    }
+
+    main {
+        padding: 0 1rem;
+    }
+}
