@@ -1,0 +1,30 @@
+{
+    "name": "pakvista-cicd",
+    "version": "1.0.0",
+    "description": "DevOps Fundamentals [Spring, 2026] Term Project",
+    "main": "index.js",
+    "scripts": {
+        "lint:html": "htmlhint \"*.html\"",
+        "lint:css": "stylelint \"*.css\"",
+        "build": "parcel build index.html lahore.html hunza.html karachi.html swat.html --dist-dir dist --public-url ./"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/DevOps-SEG1-S26/pakvista-cicd.git"
+    },
+    "devDependencies": {
+        "@parcel/transformer-webmanifest": "^2.15.4",
+        "htmlhint": "^1.1.4",
+        "parcel": "^2.15.4",
+        "stylelint": "^16.11.0",
+        "stylelint-config-standard": "^36.0.1"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/DevOps-SEG1-S26/pakvista-cicd/issues"
+    },
+    "homepage": "https://github.com/DevOps-SEG1-S26/pakvista-cicd#readme"
+}
