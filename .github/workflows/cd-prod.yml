@@ -1,22 +1,26 @@
-name: CD - Production
+name: CD - Redeploy Railway Docker Image (Production)
 
 on:
-  push:
-    branches:
-      - main
+    push:
+        branches:
+            - main
 
 jobs:
-  deploy:
-    name: Deploy to Render (Production)
-    runs-on: ubuntu-latest
-    environment: production
+    deploy:
+        runs-on: ubuntu-latest
+        environment: production
 
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
+        steps:
+            - name: Install Railway CLI
+              run: |
+                  npm install -g @railway/cli
 
-      - name: Trigger Render Production Deploy Hook
-        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_PROD_URL }}"
+            - name: Redeploy Railway service
+              run: |
+                  railway redeploy --service ${{ secrets.RAILWAY_SERVICE_ID }} --yes
+              env:
+                  RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
 
-      - name: Confirm deployment trigger
-        run: echo "Deployment to production triggered at $(date)"
+            - name: Confirm deployment
+              run: |
+                  echo "Railway Docker image redeployment triggered at $(date)"
