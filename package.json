@@ -2,11 +2,10 @@
     "name": "pakvista-cicd",
     "version": "1.0.0",
     "description": "DevOps Fundamentals [Spring, 2026] Term Project",
-    "main": "index.js",
     "scripts": {
         "lint:html": "htmlhint \"*.html\"",
         "lint:css": "stylelint \"*.css\"",
-        "build": "parcel build index.html lahore.html hunza.html karachi.html swat.html --dist-dir dist --public-url ./"
+        "build": "parcel build \"*.html\" --dist-dir dist --public-url ./"
     },
     "repository": {
         "type": "git",
@@ -20,7 +19,7 @@
         "stylelint-config-standard": "^36.0.1"
     },
     "keywords": [],
-    "author": "",
+    "author": "Muhammad Junaid Afzal",
     "license": "ISC",
     "type": "commonjs",
     "bugs": {
