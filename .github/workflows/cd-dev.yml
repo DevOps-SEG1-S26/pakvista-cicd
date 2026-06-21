@@ -1,0 +1,23 @@
+name: CD - Redeploy Railway Docker Image (Development)
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment: development
+
+    steps:
+      - name: Install Railway CLI
+        run: npm install -g @railway/cli
+
+      - name: Redeploy Railway service
+        run: railway redeploy --service ${{ secrets.RAILWAY_SERVICE_ID }} --yes
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+
+      - name: Confirm deployment
+        run: echo "Railway Docker image redeployment triggered at $(date)"
